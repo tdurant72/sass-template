@@ -1,0 +1,100 @@
+$light:#f4f4f4;
+
+// $primary: #fcfcfc;
+$primary: #1674d0;
+
+$secondary: #fa11b8;
+// $secondary: #e67a00;
+
+$red: #F44336;
+$pink: #E91E63;
+$purple: #9C27B0;
+$deep-purple: #673AB7;
+$indigo: #3F51B5;
+$blue: #2196F3;
+$light-blue: #03A9F4;
+$cyan: #00BCD4;
+$teal: #009688;
+$green: #4CAF50;
+$light-green: #8BC34A;
+$lime: #CDDC39;
+$yellow: #FFEB3B;
+$amber: #FFC107;
+$orange: #FF9800;
+$deep-orange: #FF5722;
+$brown: #795548;
+$grey: #9E9E9E;
+$dark-grey: #1a1a1a;
+$blue-grey: #607D8B;
+
+
+$white-color:#ffffff;
+
+
+//set text color based on bg
+@function set-text-color($color){
+    @if(lightness($color)> 70){
+        @return darken($grey, 40%);
+    } @else{
+        @return $white-color;
+    }
+}
+
+//set background and text color
+
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color);
+}
+
+//Margin & padding classes
+
+$spaceamounts:(1,2,3,4,5);
+
+@each $space in $spaceamounts{
+    .m-#{$space}{
+        margin: #{$space}rem;
+    }
+    .my-#{$space}{
+        margin: #{$space}rem 0;
+    }
+    .mx-#{$space}{
+        margin:0 #{$space}rem;
+    }
+    .p-#{$space}{
+        padding: #{$space}rem;
+    }
+    .py-#{$space}{
+        padding: #{$space}rem 0;
+    }
+    .px-#{$space}{
+        padding:0 #{$space}rem;
+    }
+}
+
+//font weight
+
+$weights:(100,200,300,400,500,600,700,800,900);
+
+@each $weight in $weights{
+    .w-#{$weight}{
+        font-weight: #{$weight};
+    }
+}
+
+//color classes
+
+$fontColors:("text-light",$light),("text-primary",$primary),("text-secondary",$secondary),("text-red",$red),("text-pink",$pink),("text-purple",$purple),("text-deep-purple",$deep-purple),("text-indigo",$indigo),("text-blue",$blue),("text-light-blue",$light-blue),("text-cyan",$cyan),("text-teal",$teal),("text-green",$green),("text-light-green",$light-green),("text-lime",$lime),("text-yellow",$yellow),("text-amber",$amber),("text-orange",$orange),("text-deep-orange",$deep-orange),("text-brown",$brown),("text-grey",$grey),("text-dark-grey",$dark-grey),("text-blue-grey",$blue-grey);
+
+@each $fontColor in $fontColors{
+    &.#{nth($fontColor,1)}{
+        color: nth($fontColor,2);
+    }
+}
+$backgroundColors:("background-light",$light),("background-primary",$primary),("background-secondary",$secondary),("background-red",$red),("background-pink",$pink),("background-purple",$purple),("background-deep-purple",$deep-purple),("background-indigo",$indigo),("background-blue",$blue),("background-light-blue",$light-blue),("background-cyan",$cyan),("background-teal",$teal),("background-green",$green),("background-light-green",$light-green),("background-lime",$lime),("background-yellow",$yellow),("background-amber",$amber),("background-orange",$orange),("background-deep-orange",$deep-orange),("background-brown",$brown),("background-grey",$grey),("background-dark-grey",$dark-grey),("background-blue-grey",$blue-grey);
+
+@each $backgroundColor in $backgroundColors{
+    &.#{nth($backgroundColor,1)}{
+        background-color: nth($backgroundColor,2);
+    }
+}

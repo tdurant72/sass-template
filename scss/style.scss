@@ -1,0 +1,128 @@
+@import 'config';
+@import 'utilities';
+@import 'buttons';
+@import 'type';
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: $light;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+img{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    
+}
+.primary-color{
+    color:$primary;
+}
+.secondary-color{
+    color:$secondary;
+}
+.light-color{
+    color:$light;
+}
+.dark-color{
+    color:darken($grey,80%);
+}
+// .primary-background{
+//     background-color:$primary;
+// }
+// .secondary-background{
+//     background-color:$secondary;
+// }
+// .dark-background{
+//     background-color:darken($grey,80%);
+// }
+.navbar{
+    display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul{
+            display: flex;
+            list-style: none;
+
+            li{
+                padding: 15px;
+            }
+        }
+}
+.link-secondary{
+    color:$white-color;
+    padding: 8px 12px;
+    transition: all 0.3s ease-in; 
+    border-radius: 5px;
+    &:hover{
+        color: $secondary;
+        background-color: $white-color;
+    }
+}
+.link-primary{
+    color:$white-color;
+    padding: 8px 12px;
+    transition: all 0.3s ease-in; 
+    border-radius: 5px;
+    &:hover{
+        color: $primary;
+        background-color: $white-color;
+    }
+}
+.hero{
+    @include set-background($primary);
+    height: 600px;
+
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul{
+            display: flex;
+            list-style: none;
+
+            li{
+                padding: 15px;
+                a{
+                    color: set-text-color($primary);
+                    padding: 8px 12px;
+                   transition: all 0.3s ease-in; 
+                   border-radius: 5px;
+                }
+                a:hover{
+                    color: $secondary;
+                    background-color: lighten($grey, 30%);
+                }
+            }
+        }
+
+    }
+
+    a{
+        color:$white-color;
+    }
+
+    &-content{ //.hero-content div
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img{
+            width: 50%;
+        }
+        // h2{
+        //     color:lighten($secondary, 10%);
+        // }
+    }
+}
+
+@import 'mobile';

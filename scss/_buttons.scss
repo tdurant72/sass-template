@@ -1,0 +1,82 @@
+%btn{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 4px;
+    transition: all 0.3s ease-in; 
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+.btn{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 4px;
+    transition: all 0.3s ease-in; 
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+
+.btn-primary{
+    @extend %btn;
+    @include set-background(lighten($primary, 10%));
+    &:hover{
+        @include set-background(lighten($primary, 20%));
+        // background-color: lighten($primary, 20%);
+    }
+}
+.btn-primary-outline{
+    @extend %btn;
+    background-color: lighten($primary,90%);
+    color:$primary;
+    border: 2px solid $primary;
+    &:hover{
+        // @include set-background(lighten($primary, 20%));
+        background-color: lighten($primary, 60%);
+    }
+}
+.btn-secondary{
+    @extend %btn;
+    @include set-background($secondary);
+    // background-color: $secondary;
+
+    &:hover{
+        @include set-background(lighten($secondary, 10%));
+        // background-color: lighten($secondary, 10%);
+    }
+}
+.btn-secondary-outline{
+    @extend %btn;
+    background-color: lighten($secondary,90%);
+    color:$secondary;
+    border: 2px solid $secondary;
+    &:hover{
+        background-color: lighten($secondary, 60%);
+    }
+}
+.btn-fail{
+    @extend %btn;
+    background-color: $red;
+    color: $white-color;
+    &:hover{
+        background-color: darken($red, 10%);
+    }
+}
+.btn-success{
+    @extend %btn;
+    background-color: darken($green, 10%);
+    color:$white-color;
+    &:hover{
+        background-color: darken($green, 20%);
+    }
+}
+// .btn-colored{
+//     @extend %btn;
+//     background-color: darken($green, 10%);
+//     color:$white-color;
+//     &:hover{
+//         background-color: darken($green, 20%);
+//     }
+// }
