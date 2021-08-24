@@ -11,7 +11,9 @@ export default {
 };
 
 const Template = ({ variant, label, color, weight, children, ...args }) => {
-    // You can either use a function to create DOM elements or use a plain html string!
+    // type responsive sizes in _type.scss colors in _config.scss weights found in _config.scss
+
+    //real example: <h4 class="text-primary w-500">Subheading</h4>
     return `<${variant} class="${color} ${weight}">${children}</${variant}>`;
     //   return createButton({ label, ...args });
 };

@@ -1,39 +1,39 @@
-$light:#f4f4f4;
+// $light:#f4f4f4;
 
-// $primary: #fcfcfc;
-$primary: #1674d0;
+// // $primary: #fcfcfc;
+// $primary: #1674d0;
 
-$secondary: #fa11b8;
-// $secondary: #e67a00;
+// $secondary: #fa11b8;
+// // $secondary: #e67a00;
 
-$red: #F44336;
-$pink: #E91E63;
-$purple: #9C27B0;
-$deep-purple: #673AB7;
-$indigo: #3F51B5;
-$blue: #2196F3;
-$light-blue: #03A9F4;
-$cyan: #00BCD4;
-$teal: #009688;
-$green: #4CAF50;
-$light-green: #8BC34A;
-$lime: #CDDC39;
-$yellow: #FFEB3B;
-$amber: #FFC107;
-$orange: #FF9800;
-$deep-orange: #FF5722;
-$brown: #795548;
-$grey: #9E9E9E;
-$dark-grey: #1a1a1a;
-$blue-grey: #607D8B;
+// $red: #F44336;
+// $pink: #E91E63;
+// $purple: #9C27B0;
+// $deep-purple: #673AB7;
+// $indigo: #3F51B5;
+// $blue: #2196F3;
+// $light-blue: #03A9F4;
+// $cyan: #00BCD4;
+// $teal: #009688;
+// $green: #4CAF50;
+// $light-green: #8BC34A;
+// $lime: #CDDC39;
+// $yellow: #FFEB3B;
+// $amber: #FFC107;
+// $orange: #FF9800;
+// $deep-orange: #FF5722;
+// $brown: #795548;
+// $grey: #9E9E9E;
+// $dark-grey: #1a1a1a;
+// $blue-grey: #607D8B;
 
 
-$white-color:#ffffff;
+// $white-color:#ffffff;
 
 
 //set text color based on bg
 @function set-text-color($color){
-    @if(lightness($color)> 70){
+    @if(lightness($color)> 40){
         @return darken($grey, 40%);
     } @else{
         @return $white-color;
@@ -98,3 +98,29 @@ $backgroundColors:("background-light",$light),("background-primary",$primary),("
         background-color: nth($backgroundColor,2);
     }
 }
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+  }
+  
+//   @function set-text-color($color) {
+//     @if (lightness($color) > 40%) {
+//       @return $dark-grey;
+//     } @else {
+//       @return $light;
+//     }
+//   }
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @mixin media-lg {
+    @media screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+  @mixin media-xl {
+    @media screen and (min-width: 1600px) {
+      @content;
+    }
+  }

@@ -2,6 +2,7 @@ import './page.css';
 import { createHeader } from './Header';
 
 export const createPage = ({ user, onLogout, onLogin, onCreateAccount }) => {
+  console.log('pages called')
   const article = document.createElement('article');
 
   const header = createHeader({ onLogin, onLogout, onCreateAccount, user });
