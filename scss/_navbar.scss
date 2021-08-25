@@ -1,7 +1,14 @@
+.burger-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+}
 .menu-btn {
     position: absolute;
     z-index: 1;
-    right: 1rem;
+    right: 1.5rem;
     top: 1rem;
     height: 20px;
     width: 28px;
@@ -14,7 +21,8 @@
       top: 0.5rem;
       width: 28px;
       height: 3px;
-      background: set-text-color($primary);
+      background: $primary;
+      // background: set-text-color($primary);
       @include transition-ease;
   
       &::before {
@@ -23,7 +31,8 @@
         top: -8px;
         width: 28px;
         height: 3px;
-        background: set-text-color($primary);
+        background: $primary;
+        // background: set-text-color($primary);
         @include transition-ease;
       }
   
@@ -33,21 +42,24 @@
         top: 8px;
         width: 20px;
         height: 3px;
-        background: set-text-color($primary);
+        background: $primary;
+        // background: set-text-color($primary);
         @include transition-ease;
       }
   
       &.open {
         transform: rotate(720deg);
         background: transparent;
-  
+        
         &::before {
           transform: rotate(45deg) translate(5px, 8px);
+          background: $light;
         }
   
         &::after {
           width: 28px;
           transform: rotate(-45deg) translate(3px, -7px);
+          background: $light;
         }
       }
     }
@@ -79,7 +91,7 @@
       @include transition-ease;
   
       &.open {
-        transform: translateY(0);
+        transform: translateY(-50px);
       }
   
       &__item {
@@ -99,8 +111,8 @@
         display: inline-block;
         font-size: 1.5rem;
         text-transform: uppercase;
-        padding: 2rem 0;
         font-weight: 300;
+        padding: 5px;
         @include transition-ease;
   
         &:hover {
@@ -115,3 +127,28 @@
       transition-delay: ($i * 0.1s) + 0.15s;
     }
   }
+  @include media-md{
+    .menu-btn, .burger-wrapper{
+        visibility: hidden;
+    }
+    .nav{
+        visibility: visible;
+
+        .menu-nav{
+            display: block;
+            transform: translateY(0);
+            height: 100%;
+            background: transparent;
+            text-align: right;
+
+            &__item{
+                display: inline;
+                padding-right: 1.5rem;
+            }
+
+            &__link{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

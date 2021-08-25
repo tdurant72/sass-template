@@ -33,7 +33,7 @@
 
 //set text color based on bg
 @function set-text-color($color){
-    @if(lightness($color)> 40){
+    @if(lightness($color)> 70){
         @return darken($grey, 40%);
     } @else{
         @return $white-color;

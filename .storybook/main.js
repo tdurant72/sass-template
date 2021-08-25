@@ -1,4 +1,4 @@
-import { toggleMenu } from '../stories/app.js';
+
 module.exports = {
   "stories": [
     "../stories/**/*.stories.mdx",
